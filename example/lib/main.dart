@@ -18,7 +18,19 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: IntroSlider()
+        body: SimpleIntro(
+          mySLides: SliderModel.getSliders(),
+          // selectedSlideIndex: 2,
+          nextWidget: Icon(
+            Icons.forward,
+          ),
+          skipWidget: Icon(
+            Icons.skip_next,
+          ),
+          activeIndicatorSize: Size(10, 10),
+          unActiveIndicatorSize: Size(5, 5),
+          animationStyle: Curves.slowMiddle,
+        ),
       ),
     );
   }
